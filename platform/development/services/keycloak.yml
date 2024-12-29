@@ -1,0 +1,92 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: el-keycloak
+  labels:
+    app: el-keycloak
+spec:
+  selector:
+    matchLabels:
+      app: el-keycloak
+  template:
+    metadata:
+      labels:
+        app: el-keycloak
+    spec:
+      containers:
+        - name: el-keycloak
+          image: quay.io/keycloak/keycloak:24.0.0
+          args:
+            - "start-dev"
+            - "--import-realm"
+          ports:
+            - containerPort: 8080
+          env:
+            - name: KEYCLOAK_ADMIN
+              value: admin
+            - name: KEYCLOAK_ADMIN_PASSWORD
+              value: secret
+            - name: KC_DB
+              value: postgres
+            - name: KC_DB_URL
+              value: jdbc:postgresql://el-postgres/keycloak
+            - name: KC_DB_SCHEMA
+              value: public
+            - name: KC_DB_USERNAME
+              value: postgres
+            - name: KC_DB_PASSWORD
+              value: secret
+            - name: KC_HTTP_PORT
+              value: "8080"
+#            - name: KC_HOSTNAME_URL
+#              value: https://keycloak-domain.com/auth
+          resources:
+            requests:
+              cpu: 100m
+              memory: 350Mi
+            limits:
+              cpu: 500m
+              memory: 750Mi
+          volumeMounts:
+            - mountPath: /opt/keycloak/data/import/
+              name: keycloak-import-volume
+      volumes:
+        - name: keycloak-import-volume
+          configMap:
+            name: keycloak-import
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: el-keycloak
+  labels:
+    app: el-keycloak
+spec:
+  type: ClusterIP
+  selector:
+    app: el-keycloak
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: keycloak-ingress
+  labels:
+    app: el-keycloak
+spec:
+  rules:
+    - host: el-keycloak
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: el-keycloak
+                port:
+                  number: 80
