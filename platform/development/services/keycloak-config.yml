@@ -773,7 +773,7 @@ data:
           "clientAuthenticatorType": "client-secret",
           "secret": "secret",
           "redirectUris": [
-            "https://bff-service/login/oauth2/code/keycloak101"
+            "http://bff-service/login/oauth2/code/keycloak101"
           ],
           "webOrigins": [
             "+"
