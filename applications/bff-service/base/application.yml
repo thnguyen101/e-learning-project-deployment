@@ -12,7 +12,7 @@ com:
       oidc:
         client:
           client-uri: http://192.168.49.2
-#          post-logout-redirect-host: bff-service
+          post-logout-redirect-host: 192.168.49.2
 
 bff:
   greeting: Welcome to BFF from Kubernetes environment!
