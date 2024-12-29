@@ -4,14 +4,14 @@ spring:
       client:
         provider:
           keycloak101:
-            issuer-uri: https://keycloak-domain.com/auth/realms/keycloak101
+            issuer-uri: https://el-keycloak/realms/keycloak101
 
 com:
   c4-soft:
     springaddons:
       oidc:
         client:
-          client-uri: https://bff-service-domain.com
+          client-uri: https://bff-service
 
 bff:
   greeting: Welcome to BFF from Kubernetes environment!
