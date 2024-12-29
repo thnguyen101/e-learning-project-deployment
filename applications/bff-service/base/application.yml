@@ -6,13 +6,13 @@ spring:
           keycloak101:
             issuer-uri: http://el-keycloak/realms/keycloak101
 
-com:
-  c4-soft:
-    springaddons:
-      oidc:
-        client:
-          client-uri: http://192.168.49.2
-          post-logout-redirect-host: 192.168.49.2
+#com:
+#  c4-soft:
+#    springaddons:
+#      oidc:
+#        client:
+#          client-uri: http://192.168.49.2
+#          post-logout-redirect-host: 192.168.49.2
 
 bff:
   greeting: Welcome to BFF from Kubernetes environment!
