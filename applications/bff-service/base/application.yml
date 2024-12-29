@@ -11,7 +11,7 @@ com:
     springaddons:
       oidc:
         client:
-          client-uri: http://bff-service
+          client-uri: http://192.168.49.2
 #          post-logout-redirect-host: bff-service
 
 bff:
