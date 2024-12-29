@@ -5,8 +5,8 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: bff-service
-      http:
+#    - host: bff-service
+    - http:
         paths:
           - path: /
             pathType: Prefix
