@@ -15,7 +15,7 @@ patches:
 
 images:
 - name: lms-service
-  newName: ghcr.io/thainguyencoffee/lms-service
+  newName: ghcr.io/thnguyen101/lms-service
   newTag: latest
 
 replicas:
