@@ -8,7 +8,7 @@ spec:
     - host: bff-service
       http:
         paths:
-          - path: /
+          - path: /bff
             pathType: Prefix
             backend:
               service:

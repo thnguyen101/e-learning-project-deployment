@@ -773,7 +773,7 @@ data:
           "clientAuthenticatorType": "client-secret",
           "secret": "secret",
           "redirectUris": [
-            "http://bff-service/login/oauth2/code/keycloak101"
+            "http://bff-service/bff/login/oauth2/code/keycloak101"
           ],
           "webOrigins": [
             "+"
@@ -792,8 +792,8 @@ data:
             "oidc.ciba.grant.enabled" : "false",
             "client.secret.creation.time" : "1728051978",
             "backchannel.logout.session.required" : "true",
-            "backchannel.logout.url" : "http://bff-service/logout/connect/back-channel/keycloak101",
-            "post.logout.redirect.uris" : "http://bff-service/*",
+            "backchannel.logout.url" : "http://bff-service/bff/logout/connect/back-channel/keycloak101",
+            "post.logout.redirect.uris" : "http://bff-service/bff/*",
             "display.on.consent.screen" : "false",
             "oauth2.device.authorization.grant.enabled" : "false",
             "backchannel.logout.revoke.offline.tokens" : "false"
