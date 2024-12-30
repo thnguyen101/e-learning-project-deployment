@@ -10,7 +10,7 @@ spring:
 
 logging:
   level:
-    root: debug
+    org.springframework.security: debug
 
 bff:
   greeting: Welcome to BFF from Kubernetes environment!
