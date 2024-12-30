@@ -26,6 +26,8 @@ spec:
           env:
             - name: LMS_SERVICE_URI
               value: http://lms-service
+            - name: ANGULAR_URI
+              value: http://angular-ui
           livenessProbe:
             httpGet:
               path: /actuator/health/liveness
