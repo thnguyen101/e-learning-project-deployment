@@ -7,4 +7,4 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://el-keycloak/auth/realms/keycloak101
+          issuer-uri: http://el-keycloak/realms/keycloak101

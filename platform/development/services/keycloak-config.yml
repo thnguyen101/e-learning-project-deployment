@@ -788,7 +788,16 @@ data:
           "publicClient": false,
           "frontchannelLogout": false,
           "protocol": "openid-connect",
-          "attributes": {},
+          "attributes" : {
+            "oidc.ciba.grant.enabled" : "false",
+            "client.secret.creation.time" : "1728051978",
+            "backchannel.logout.session.required" : "true",
+            "backchannel.logout.url" : "http://bff-service/logout/connect/back-channel/keycloak101",
+            "post.logout.redirect.uris" : "http://bff-service/*",
+            "display.on.consent.screen" : "false",
+            "oauth2.device.authorization.grant.enabled" : "false",
+            "backchannel.logout.revoke.offline.tokens" : "false"
+          },
           "authenticationFlowBindingOverrides": {},
           "fullScopeAllowed": true,
           "nodeReRegistrationTimeout": -1,
