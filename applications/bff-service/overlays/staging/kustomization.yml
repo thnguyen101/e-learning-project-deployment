@@ -16,7 +16,7 @@ patches:
 images:
 - name: bff-service
   newName: ghcr.io/thnguyen101/bff-service
-  newTag: e4178848e6b8480cc43501b328b1219e1bf5718f
+  newTag: 8673d87396efa175fbcb288394669d988b65b3a4
 
 replicas:
 - count: 1
